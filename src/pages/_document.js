@@ -8,10 +8,10 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* Custom head elements */}
-          <link rel="icon" href="/favicon.ico"/>
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>

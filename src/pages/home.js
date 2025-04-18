@@ -4,11 +4,8 @@ import NavBar from 'components/NavBar';
 import Newsletter from 'components/Newsletter';
 import PerformanceBar from 'components/PerformanceBar';
 import ProgramsBar from 'components/ProgramsBar';
-import React, {useEffect} from 'react';
-import {Box} from '@chakra-ui/react';
-
-
-
+import React, { useEffect } from 'react';
+import { Box } from '@chakra-ui/react';
 
 function Home() {
   useEffect(() => {

@@ -18,7 +18,13 @@ const VidBox = ({ instrument, videoUrl }) => {
   };
 
   return (
-    <Box position="relative" width="700px" height="450px" borderRadius="15px" overflow="hidden">
+    <Box
+      position="relative"
+      width="700px"
+      height="450px"
+      borderRadius="15px"
+      overflow="hidden"
+    >
       {!isPlaying && (
         <Box
           position="absolute"
@@ -35,7 +41,13 @@ const VidBox = ({ instrument, videoUrl }) => {
           cursor="pointer"
           onClick={handlePlay}
         >
-          <Image src={'https://res.cloudinary.com/dp0f6uqzo/image/upload/v1733091410/carbon_play-outline_wqpzdo.png'} alt="Play Button" boxSize="80px" />
+          <Image
+            src={
+              'https://res.cloudinary.com/dp0f6uqzo/image/upload/v1733091410/carbon_play-outline_wqpzdo.png'
+            }
+            alt="Play Button"
+            boxSize="80px"
+          />
         </Box>
       )}
       {isPlaying && (

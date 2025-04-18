@@ -1,6 +1,5 @@
+const dimensions = {
+  mobile: 768,
+};
 
-const dimensions ={
-    mobile: 768,
-}
-
-export default dimensions
+export default dimensions;
