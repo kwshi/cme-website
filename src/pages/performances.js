@@ -3,11 +3,8 @@ import NavBar from 'components/NavBar';
 import PastPerformance from 'components/PastPerformance';
 import PerformanceBanner from 'components/PerformanceBanner';
 import PerformanceCarousel from 'components/PerformanceCarousel';
-import React, {useEffect} from 'react';
-import {Box} from '@chakra-ui/react';
-
-
-
+import React, { useEffect } from 'react';
+import { Box } from '@chakra-ui/react';
 
 function Performances() {
   useEffect(() => {
@@ -16,10 +13,10 @@ function Performances() {
   return (
     <Box>
       <NavBar />
-      <PerformanceBanner/>
+      <PerformanceBanner />
       <PerformanceCarousel />
       <Box id="past-performances">
-        <PastPerformance /> 
+        <PastPerformance />
       </Box>
       <Footer />
     </Box>

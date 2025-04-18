@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 import events from 'data/schedule';
 import { Box, Divider, Flex, Heading, Text } from '@chakra-ui/react';
 
 export default function Calendar() {
-
   function abbreviateDay(dayName) {
     const abbreviations = {
       Monday: 'Mon',
@@ -49,7 +48,16 @@ export default function Calendar() {
 
   return (
     <Box maxW="90%" mx="auto">
-    <Heading fontSize="30px" fontWeight="bold" color="white" paddingTop="10px" paddingBottom="10px"> Class & Practice Schedule</Heading>
+      <Heading
+        fontSize="30px"
+        fontWeight="bold"
+        color="white"
+        paddingTop="10px"
+        paddingBottom="10px"
+      >
+        {' '}
+        Class & Practice Schedule
+      </Heading>
       {sortedEvents.map((event, index) => {
         const isNewDay = event.day !== lastDay;
         lastDay = event.day;
@@ -57,9 +65,7 @@ export default function Calendar() {
         return (
           <React.Fragment key={index}>
             {/* If it's a new day, insert a Divider for separation (except at the very top). */}
-            {isNewDay && index !== 0 && (
-              <Divider my={4} borderColor="white" />
-            )}
+            {isNewDay && index !== 0 && <Divider my={4} borderColor="white" />}
 
             <Flex
               my={3}
@@ -70,12 +76,7 @@ export default function Calendar() {
               bg={getBgColor(event.type)}
             >
               {/* Day Column */}
-              <Text
-                w="4rem"
-                fontSize="lg"
-                fontWeight="bold"
-                mr={2}
-              >
+              <Text w="4rem" fontSize="lg" fontWeight="bold" mr={2}>
                 {abbreviateDay(event.day)}
               </Text>
 

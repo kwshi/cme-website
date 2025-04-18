@@ -39,11 +39,11 @@ const NavBar = () => {
   // const {signedIn, setSignedIn} = React.useContext(AuthContext);
 
   // TEMPORARY
-    // const [signedIn, setSignedIn] = React.useState(false);
+  // const [signedIn, setSignedIn] = React.useState(false);
 
-    // const handleSignIn = () => {
-    //     setSignedIn((prevSignedIn) => !prevSignedIn);
-    // };
+  // const handleSignIn = () => {
+  //     setSignedIn((prevSignedIn) => !prevSignedIn);
+  // };
   // END TEMPORARY
 
   return (
@@ -54,15 +54,19 @@ const NavBar = () => {
         minH={'60px'}
         py={{ base: 8 }}
         px={{ base: 'flex', md: 20 }}
-        align={{base: 'left', md: 'center'}}
+        align={{ base: 'left', md: 'center' }}
       >
-        <Flex flex={{ base: 'auto', md: 1}} justify={{ base: 'left', md: 'start' }} paddingLeft="7%">
+        <Flex
+          flex={{ base: 'auto', md: 1 }}
+          justify={{ base: 'left', md: 'start' }}
+          paddingLeft="7%"
+        >
           <Link
             textAlign={useBreakpointValue('left')}
-            fontSize={{base:"20px", md: "28px"}}
+            fontSize={{ base: '20px', md: '28px' }}
             fontWeight="semibold"
             color={useColorModeValue('gray.800', 'white')}
-            href={"/"}
+            href={'/'}
           >
             UCLA Chinese Music
           </Link>
@@ -72,22 +76,35 @@ const NavBar = () => {
           ml={{ base: 'auto', md: -2 }}
           display={{ base: 'flex', md: 'none' }}
           justifyContent={'flex-end'}
-          align='center'
+          align="center"
         >
           <IconButton
-            align='center'
+            align="center"
             onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+            icon={
+              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+            }
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
             color={useColorModeValue('white')}
           />
         </Flex>
 
-        <Flex display = {{ base: 'none', md: 'flex'}} justify="flex-end">
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10} justify="flex-end">
+        <Flex display={{ base: 'none', md: 'flex' }} justify="flex-end">
+          <Flex
+            display={{ base: 'none', md: 'flex' }}
+            ml={10}
+            justify="flex-end"
+          >
             <DesktopNav />
-            <Button as="a" href="https://docs.google.com/forms/d/1Cy9lgqgpYJlJLDlNahgoux5wfap7sj7qjx5DykwXDE4" bgColor="red.500" ml={10}>Join today</Button>
+            <Button
+              as="a"
+              href="https://docs.google.com/forms/d/1Cy9lgqgpYJlJLDlNahgoux5wfap7sj7qjx5DykwXDE4"
+              bgColor="red.500"
+              ml={10}
+            >
+              Join today
+            </Button>
           </Flex>
         </Flex>
 
@@ -96,8 +113,7 @@ const NavBar = () => {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}
-        >  
-          
+        >
           {/* <Button
             onClick={toggleColorMode}
             fontSize={'sm'}
@@ -193,7 +209,7 @@ const DesktopNav = () => {
                 href={navItem.href ?? '#'}
                 fontSize="18px"
                 fontWeight="medium"
-                color={"linkColor"}
+                color={'linkColor'}
                 _hover={{
                   color: linkHoverColor,
                   textDecoration: 'none',
@@ -265,12 +281,7 @@ const DesktopSubNav = ({ href, label, subLabel }) => {
 
 const MobileNav = () => {
   return (
-    <Stack
-      bg={'dark-gray'}
-      color={'white'}
-      p={4}
-      display={{ md: 'none' }}
-    >
+    <Stack bg={'dark-gray'} color={'white'} p={4} display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -295,7 +306,7 @@ const MobileNavItem = ({ children, href, label }) => {
       >
         <Text
           fontWeight={600}
-        //   color={useColorModeValue('gray.600', 'gray.200')}
+          //   color={useColorModeValue('gray.600', 'gray.200')}
           color={'white'}
         >
           {label}
@@ -404,7 +415,7 @@ const NAV_ITEMS = [
   },
   {
     href: '/instruments',
-    label: 'Instruments'
+    label: 'Instruments',
   },
 ];
 
