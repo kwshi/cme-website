@@ -116,6 +116,7 @@ export default function Footer() {
             <Link href={'/programs'}>Programs</Link>
             <Link href={'/performances'}>Performances</Link>
             <Link href={'/instruments'}>Instruments</Link>
+            <Link href={'/admin'}>Admin</Link>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Contact</ListHeader>
