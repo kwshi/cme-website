@@ -1,0 +1,1 @@
+ALTER TABLE "content"."event" ALTER COLUMN "link" DROP NOT NULL;

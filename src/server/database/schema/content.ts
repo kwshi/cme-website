@@ -6,7 +6,7 @@ export const schema = pgSchema('content');
 // performances etc.
 export const event = schema.table('event', {
   title: text().notNull(),
-  link: text().notNull(),
+  link: text(),
   date: date().notNull(),
   start: time().notNull(),
   end: time().notNull(),

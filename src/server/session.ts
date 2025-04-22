@@ -37,7 +37,7 @@ export const check = async () => {
   const result = JwtPayload.safeParse(payload);
   if (!result.success) return null;
 
-  const session = await database.query.session.findFirst({
+  const session = await database.query.adminSession.findFirst({
     where: (t, r) =>
       r.and(
         r.eq(t.token, result.data.token),
@@ -59,7 +59,7 @@ export const login = async (formData: FormData) => {
     return;
   }
 
-  const entry = await database.query.admin.findFirst({
+  const entry = await database.query.adminUser.findFirst({
     where: (a, r) => r.eq(a.email, result.data.email),
     columns: { password: true },
   });
@@ -69,9 +69,9 @@ export const login = async (formData: FormData) => {
   if (!ok) return;
 
   const [insert] = await database
-    .insert(Schema.session)
+    .insert(Schema.Admin.session)
     .values({ email: result.data.email })
-    .returning({ token: Schema.session.token });
+    .returning({ token: Schema.Admin.session.token });
 
   const token = await new SignJWT({
     email: result.data.email,
@@ -91,5 +91,5 @@ export const login = async (formData: FormData) => {
 
 export const clean = () =>
   database
-    .delete(Schema.session)
-    .where(lt(Schema.session.fresh, sql`now() - INTERVAL '7 days'`));
+    .delete(Schema.Admin.session)
+    .where(lt(Schema.Admin.session.fresh, sql`now() - INTERVAL '7 days'`));
